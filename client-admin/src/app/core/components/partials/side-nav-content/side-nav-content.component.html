@@ -1,0 +1,114 @@
+<mat-nav-list>
+  <mat-card profileCard>
+    <mat-card-header>
+      <div
+        mat-card-avatar
+        class="cover-header-image"
+        [style.background-image]="profileImg"
+      ></div>
+      <mat-card-title class="m-auto" *ngIf="sidenav.opened">{{
+        userFullName$ | async
+      }}</mat-card-title>
+      <mat-card-subtitle class="m-auto" *ngIf="sidenav.opened">{{
+        userLoginName$ | async
+      }}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+  <span *ngFor="let item of navItems">
+    <span *ngIf="item.children && item.children.length > 0 && item.visible">
+      <mat-accordion *ngIf="sidenav.opened; else isClosed">
+        <mat-expansion-panel borderlessAccordionStyle [expanded]="item.isOpen">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <!-- Parent menu route link -->
+              <div
+                class="flex flex-row justify-between items-center content-center"
+              >
+                <i [ngClass]="'nav-icon ' + item.iconName"></i>
+                <span class="nav-caption">{{
+                  item.displayName | translate
+                }}</span>
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <span *ngFor="let child of item.children">
+            <mat-list-item
+              [matTooltip]="child.displayName | translate"
+              matTooltipPosition="right"
+              [routerLink]="child.route"
+              *ngIf="child.visible"
+            >
+              <!-- Child menu route link  -->
+              <div
+                class="flex flex-row justify-between items-center content-center"
+              >
+                <i [ngClass]="'nav-icon ' + child.iconName"></i>
+                <span
+                  class="nav-caption"
+                  [matBadge]="child.badgeContent"
+                  [matBadgeOverlap]="false"
+                  [matBadgeColor]="child.badgeColor"
+                  [matBadgeHidden]="!child.hasBadge"
+                  >{{ child.displayName | translate }}</span
+                >
+              </div>
+            </mat-list-item>
+          </span>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <ng-template #isClosed>
+        <mat-accordion>
+          <mat-expansion-panel [expanded]="!sidenav.opened">
+            <mat-expansion-panel-header>
+              <mat-panel-description> </mat-panel-description>
+            </mat-expansion-panel-header>
+            <span *ngFor="let child of item.children">
+              <mat-list-item
+                [matTooltip]="child.displayName | translate"
+                matTooltipPosition="right"
+                [routerLink]="child.route"
+                *ngIf="child.visible"
+              >
+                <i [ngClass]="'nav-icon ' + child.iconName"></i>
+              </mat-list-item>
+            </span>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </ng-template>
+    </span>
+    <span
+      *ngIf="(!item.children || item.children.length === 0) && item.visible"
+    >
+      <mat-list-item
+        *ngIf="sidenav.opened; else isClosed"
+        [matTooltip]="item.displayName | translate"
+        matTooltipPosition="right"
+        [routerLink]="item.route"
+      >
+        <!-- Individual menu route link -->
+        <div class="flex flex-row justify-between items-center content-center">
+          <i [ngClass]="'nav-icon ' + item.iconName"></i>
+          <span
+            class="nav-caption"
+            [matBadge]="item.badgeContent"
+            [matBadgeOverlap]="false"
+            [matBadgeColor]="item.badgeColor"
+            [matBadgeHidden]="!item.hasBadge"
+            >{{ item.displayName | translate }}</span
+          >
+        </div>
+      </mat-list-item>
+      <ng-template #isClosed>
+        <mat-list-item
+          [matTooltip]="item.displayName | translate"
+          matTooltipPosition="right"
+          [routerLink]="item.route"
+        >
+          <i [ngClass]="'nav-icon ' + item.iconName"></i>
+        </mat-list-item>
+      </ng-template>
+    </span>
+  </span>
+</mat-nav-list>
+<!-- </mat-sidenav> -->

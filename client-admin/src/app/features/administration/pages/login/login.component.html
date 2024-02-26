@@ -1,0 +1,98 @@
+<div class="wrapper">
+  <div class="hold-transition login-page bg-blue-color">
+    <div class="login-box">
+      <div class="login-logo">
+        <a [routerLink]="['/']">
+          <!-- <img
+            src="../../../../../assets/icons/SIDE elefante_solo_fondos escuros.png"
+            alt="company-logo"
+          /> -->
+        </a>
+      </div>
+      <!-- /.login-logo -->
+      <div class="card">
+        <div class="card-body login-card-body">
+          <p class="login-box-msg">{{ "login.title" | translate }}</p>
+
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <mat-form-field class="full-width">
+              <input
+                autofocus
+                matInput
+                formControlName="userName"
+                type="text"
+                [placeholder]="'login.user-name' | translate"
+              />
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <input
+                matInput
+                formControlName="password"
+                [type]="passwordFieldTypeDefinition"
+                [placeholder]="'login.password' | translate"
+              />
+              <mat-button
+                matSuffix
+                *ngIf="isPasswordVisibile"
+                (click)="onChangePasswordTextVisibility()"
+                class="fa-solid fa-eye-slash"
+              ></mat-button>
+              <button
+                matSuffix
+                *ngIf="!isPasswordVisibile"
+                (click)="onChangePasswordTextVisibility()"
+                class="fa-solid fa-eye"
+              ></button>
+            </mat-form-field>
+
+            <div class="row">
+              <div class="col-8">
+                <!-- <div class="icheck-primary">
+                  <input type="checkbox" id="remember" />
+                  <label for="remember">
+                    {{ "login.remember-me" | translate }}
+                  </label>
+                </div> -->
+              </div>
+              <!-- /.col -->
+              <div class="col-4">
+                <button (click)="onSubmit()" class="btn btn-primary btn-block">
+                  {{ "login.sign-in" | translate }}
+                </button>
+              </div>
+              <!-- /.col -->
+            </div>
+          </form>
+
+          <!-- <div class="social-auth-links text-center mb-3">
+              <p>- {{ "login.connector-or" | translate }} -</p>
+              <a href="#" class="btn btn-block btn-primary">
+                <i class="fab fa-facebook mr-2"></i>
+                {{ "login.sign-in-facebook" | translate }}
+              </a>
+              <a href="#" class="btn btn-block btn-danger">
+                <i class="fab fa-google-plus mr-2"></i>
+                {{ "login.sign-in-google" | translate }}
+              </a>
+            </div> -->
+          <!-- /.social-auth-links -->
+
+          <!-- <p class="mb-1">
+            <a [routerLink]="['/forgot-password']">{{
+              "login.forgot-password" | translate
+            }}</a>
+          </p>
+          <p class="mb-0">
+            <a [routerLink]="['/register']" class="text-center">{{
+              "login.create-account" | translate
+            }}</a>
+          </p>
+        </div> -->
+          <!-- /.login-card-body -->
+        </div>
+      </div>
+      <!-- /.login-box -->
+    </div>
+  </div>
+</div>

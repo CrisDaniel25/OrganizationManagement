@@ -1,0 +1,89 @@
+<mat-toolbar [color]="color">
+  <mat-toolbar-row>
+    <button mat-icon-button sideNavAnimation [sidenav]="sidenav">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>{{ name }}</span>
+    <div
+      class="flex flex-row justify-end items-center content-center full-width"
+    >
+      <button
+        *ngIf="showMessage"
+        mat-icon-button
+        [matBadge]="4"
+        [matBadgeColor]="'accent'"
+        [matBadgeHidden]="!showMessage"
+        [matMenuTriggerFor]="menuComments"
+      >
+        <i class="fa-regular fa-comments fa-xl"></i>
+      </button>
+      <mat-menu #menuComments="matMenu">
+        <div *ngFor="let item of messages$ | async; index as i">
+          <div mat-menu-item>
+            <span> {{ item.message }}</span>
+          </div>
+        </div>
+      </mat-menu>
+
+      <button
+        *ngIf="showNotifications"
+        mat-icon-button
+        [matBadge]="4"
+        [matBadgeColor]="'accent'"
+        [matBadgeHidden]="!showNotifications"
+        [matMenuTriggerFor]="menuNotifications"
+      >
+        <i class="fa-regular fa-bell fa-xl"></i>
+      </button>
+      <mat-menu #menuNotifications="matMenu">
+        <div *ngFor="let item of messages$ | async; index as i">
+          <div mat-menu-item>
+            <span> {{ item.message }}</span>
+          </div>
+        </div>
+      </mat-menu>
+
+      <button
+        *ngIf="showTranslateButton"
+        mat-icon-button
+        [matMenuTriggerFor]="menuLan"
+      >
+        <i class="nav-icon fa-solid fa-earth-americas"></i>
+      </button>
+      <mat-menu #menuLan="matMenu">
+        <button mat-menu-item (click)="useLang('es')">
+          <span> {{ "navbar.spanish" | translate }} </span>
+        </button>
+        <button mat-menu-item (click)="useLang('en')">
+          <span> {{ "navbar.english" | translate }}</span>
+        </button>
+      </mat-menu>
+
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <!-- [disabled]="loggedUser.typeAutentication != 'EX'" -->
+        <button mat-menu-item (click)="validate.changePassword()">
+          <mat-icon>fingerprint</mat-icon>
+          <span>{{ "navbar.change-password" | translate }}</span>
+        </button>
+        <button mat-menu-item (click)="appService.logout()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>{{ "navbar.sign-out" | translate }}</span>
+        </button>
+      </mat-menu>
+
+      <div *ngIf="showFullScreenButton">
+        <a
+          class="nav-link"
+          data-widget="fullscreen"
+          [routerLink]=""
+          role="button"
+        >
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,5 @@
+<div class="full-width" [formGroup]="group" *ngIf="field.visible">
+  <mat-checkbox [formControlName]="field.name">{{
+    field.label | translate
+  }}</mat-checkbox>
+</div>

@@ -1,0 +1,30 @@
+<form class="form" [formGroup]="form" (submit)="onSubmit($event)">
+  <mat-card
+    [ngStyle]="{
+      width: width,
+      height: height
+    }"
+  >
+    <mat-card-header>
+      <mat-card-title>{{ title }}</mat-card-title>
+      <mat-card-subtitle
+        ><span>{{ subtitle }}</span></mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card-content class="flex flex-col">
+      <div
+        *ngFor="let layout of fields"
+        [ngClass]="getFullMergedParentClass(layout.parentClass)"
+      >
+        <ng-container
+          dynamicField
+          *ngFor="let field of layout.fields"
+          [field]="field"
+          [group]="form"
+        >
+        </ng-container>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>
+<app-progress-spiner></app-progress-spiner>

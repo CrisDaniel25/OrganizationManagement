@@ -1,0 +1,14 @@
+[
+  {
+    "GroupId": 1,
+    "GroupName": "admin",
+    "GroupDescription": "Administrator",
+    "GroupStatus": "A"
+  },
+  {
+    "GroupId": 2,
+    "GroupName": "developer",
+    "GroupDescription": "Developer",
+    "GroupStatus": "A"
+  }
+]

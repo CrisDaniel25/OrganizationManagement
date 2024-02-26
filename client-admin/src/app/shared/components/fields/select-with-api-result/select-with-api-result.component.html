@@ -1,0 +1,28 @@
+<mat-form-field
+  class="full-width margin-top"
+  appearance="outline"
+  [formGroup]="group"
+  *ngIf="field.visible"
+>
+  <mat-label>{{ field.label | translate }}</mat-label>
+
+  <mat-select
+    [placeholder]="field.label | translate"
+    [formControlName]="field.name"
+  >
+    <mat-option
+      *ngFor="let item of field.observableOptions | async"
+      [value]="item.id"
+      >{{ item.desc }}</mat-option
+    >
+  </mat-select>
+
+  <ng-container
+    *ngFor="let validation of field.validations"
+    ngProjectAs="mat-error"
+  >
+    <mat-error *ngIf="group.get(field.name)?.hasError(validation.name)">{{
+      validation.message
+    }}</mat-error>
+  </ng-container>
+</mat-form-field>

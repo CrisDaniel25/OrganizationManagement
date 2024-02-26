@@ -1,0 +1,8 @@
+<div class="full-width" [formGroup]="group" *ngIf="field.visible">
+  <label class="radio-label-padding">{{ field.label | translate }}:</label>
+  <mat-radio-group [formControlName]="field.name">
+    <mat-radio-button *ngFor="let item of field.options" [value]="item.id">{{
+      item.desc | translate
+    }}</mat-radio-button>
+  </mat-radio-group>
+</div>

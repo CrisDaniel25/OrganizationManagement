@@ -1,0 +1,34 @@
+[
+  {
+    "AccessTypeId": 1,
+    "AccessTypeDescription": "Read"
+  },
+  {
+    "AccessTypeId": 2,
+    "AccessTypeDescription": "Create"
+  },
+  {
+    "AccessTypeId": 3,
+    "AccessTypeDescription": "Update"
+  },
+  {
+    "AccessTypeId": 4,
+    "AccessTypeDescription": "Delete"
+  },
+  {
+    "AccessTypeId": 5,
+    "AccessTypeDescription": "Publish"
+  },
+  {
+    "AccessTypeId": 6,
+    "AccessTypeDescription": "Upload"
+  },
+  {
+    "AccessTypeId": 7,
+    "AccessTypeDescription": "Approve"
+  },
+  {
+    "AccessTypeId": 8,
+    "AccessTypeDescription": "Option"
+  }
+]

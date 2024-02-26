@@ -1,0 +1,25 @@
+<app-nav-bar
+  [showMessage]="showMessage"
+  [showNotifications]="showNotifications"
+  [sidenav]="sidenav"
+></app-nav-bar>
+<mat-sidenav-container class="sidenav-container" autosize>
+  <mat-sidenav
+    #sidenav
+    [position]="'start'"
+    [mode]="isBiggerScreen() ? 'over' : 'side'"
+    [disableClose]="disableClose"
+    [(opened)]="opened"
+  >
+    <app-side-nav-content
+      [navItems]="sideBarItems"
+      [sidenav]="sidenav"
+    ></app-side-nav-content
+  ></mat-sidenav>
+  <mat-sidenav-content>
+    <div class="app-content container-fluid">
+      <router-outlet></router-outlet>
+      <!-- <app-footer></app-footer> -->
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

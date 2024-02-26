@@ -1,0 +1,10 @@
+.close-icon {
+  position: relative;
+}
+.close-icon .toast-close-button {
+  position: absolute;
+  top: 15%;
+  color: white;
+  font-size: 25px;
+  font-weight: 100;
+}

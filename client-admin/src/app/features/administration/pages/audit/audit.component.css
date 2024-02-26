@@ -1,0 +1,17 @@
+::ng-deep .mat-dialog-title {
+  display: flex;
+}
+
+::ng-deep .mat-dialog-container {
+  overflow: hidden;
+}
+
+::ng-deep .mat-dialog-content {
+  overflow: hidden;
+  height: 100%;
+}
+
+.scrollable {
+  height: 250px;
+  overflow-y: auto;
+}

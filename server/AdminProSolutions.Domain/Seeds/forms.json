@@ -1,0 +1,26 @@
+[
+  {
+    "FormId": 1,
+    "FormModule": "Admin",
+    "FormName": "Users",
+    "FormDescription": "Manage Users"
+  },
+  {
+    "FormId": 2,
+    "FormModule": "Admin",
+    "FormName": "Groups",
+    "FormDescription": "Manage Groups"
+  },
+  {
+    "FormId": 3,
+    "FormModule": "Admin",
+    "FormName": "Tracking",
+    "FormDescription": "Changes Tracking"
+  },
+  {
+    "FormId": 4,
+    "FormModule": "Admin",
+    "FormName": "Dashboard",
+    "FormDescription": "Reporting"
+  }
+]

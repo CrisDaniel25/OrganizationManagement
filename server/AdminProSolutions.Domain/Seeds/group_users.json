@@ -1,0 +1,12 @@
+[
+  {
+    "GroupUserId": 1,
+    "UserId": 1,
+    "GroupId": 1
+  },
+  {
+    "GroupUserId": 2,
+    "UserId": 2,
+    "GroupId": 2
+  }
+]

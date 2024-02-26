@@ -1,0 +1,22 @@
+<div class="row" mat-dialog-title>
+  <div class="col-11">
+    <h2>
+      {{ "audit.title" | translate }} | {{ id }} - {{ operation }}
+      {{ "audit.to" | translate }} {{ tableName }}
+    </h2>
+  </div>
+  <div class="col-1">
+    <button mat-raised-button mat-dialog-close color="accent" align="end">
+      {{ "audit.close" | translate }}
+    </button>
+  </div>
+</div>
+<mat-dialog-content>
+  <div class="mb-5">
+    <ngx-json-viewer [json]="dataObject.data"></ngx-json-viewer>
+  </div>
+
+  <div class="scrollable" *ngIf="showTextDiff">
+    <text-diff [left]="dataObject.left" [right]="dataObject.right"></text-diff>
+  </div>
+</mat-dialog-content>

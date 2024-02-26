@@ -1,0 +1,15 @@
+<div class="full-width" [formGroup]="group">
+  <button
+    [type]="getInputType(field.inputType)"
+    mat-raised-button
+    [color]="field.color || 'primary'"
+    [disabled]="field.pristine ? group.pristine : false"
+    *ngIf="field.visible"
+  >
+    <i [ngClass]="'nav-icon ' + field.icon"></i>
+    {{ field.label | translate }}
+  </button>
+  <a mat-button [routerLink]="field.returnPath" *ngIf="field.returnPath">{{
+    "button.back" | translate
+  }}</a>
+</div>

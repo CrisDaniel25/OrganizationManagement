@@ -1,0 +1,143 @@
+{
+  "navbar": {
+    "change-password": "Cambiar Contraseña",
+    "sign-out": "Salir",
+    "english": "Inglés",
+    "spanish": "Español"
+  },
+  "login": {
+    "title": "Inicia sesión para iniciar tu sesión",
+    "sign-in-google": "Iniciar sesión con Google+",
+    "sign-in-facebook": "Iniciar sesión usando Facebook",
+    "sign-in": "Ingresar",
+    "user-name": "Usuario",
+    "password": "Contraseña",
+    "remember-me": "Recuérdame",
+    "forgot-password": "¿Olvidaste tu contraseña?",
+    "connector-or": "O",
+    "create-account": "Registrar una nueva membresía"
+  },
+  "register": {
+    "title": "Registrar una nueva membresía",
+    "sign-in-with": "Ingresar con",
+    "sign-in-with-credentials": "O ingresar con credenciales",
+    "name": "Nombre",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "privacy-policy": "Política de privacidad",
+    "create-account": "Registrar una nueva membresía",
+    "have-account": "Ya tengo una membresía",
+    "agree-with": "Estoy de acuerdo con",
+    "connector-or": "O",
+    "terms": "términos",
+    "register": "Registrar"
+  },
+  "forgot-password": {
+    "title": "¿Olvidaste tu contraseña? Aquí puede recuperar fácilmente una nueva contraseña.",
+    "submit-buttom": "Pide nueva contraseña",
+    "login": "Ingresar",
+    "register": "Registrar una nueva membresía"
+  },
+  "change-password": {
+    "title": "Cambiar contraseña",
+    "current-password": "Contraseña actual",
+    "new-password": "Contraseña nueva",
+    "confirm-password": "Confirmar contraseña",
+    "back": "Volver",
+    "save": "Guardar",
+    "password-policy": "La contraseña debe tener al menos 8 caracteres y debe contener al menos una letra mayúscula, una letra minúscula y un número."
+  },
+  "administration": {
+    "home": "Inicio",
+    "administration": "Administración",
+    "groups": "Grupos",
+    "users": "Usuarios",
+    "register": "Registros",
+    "maintenance": "Mantenimiento"
+  },
+  "page-not-found": {
+    "title": "¡Ups! Página no encontró.",
+    "description": "No pudimos encontrar la página que estabas buscando. Mientras tanto, puedes",
+    "return-home": "retornar a la pagina inicial."
+  },
+  "dynamic": {
+    "search": "Buscar",
+    "new": "Nuevo",
+    "edit": "Editar",
+    "delete": "Borrar",
+    "log": "Registro"
+  },
+  "dashboard": {
+    "welcome-title": "Panel de Control"
+  },
+  "user": {
+    "title": "Gestión de Usuarios",
+    "id": "Id",
+    "username": "Nombre de Usuario",
+    "fullname": "Nombre Completo",
+    "status": "Estado",
+    "all": "Todos",
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "lock": "Bloqueado",
+    "user-login": "Nomber de usuario",
+    "name": "Nombre",
+    "new-user": "Relacionar nuevo usuario",
+    "phone": "Numero de Telefono",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "type": "Tipo de usuario",
+    "save": "Guardar",
+    "back": "Volver",
+    "user-exist": "Usuario ya existe",
+    "AD-Directory": "Usuario no existe en Active Directory",
+    "password-policy": "La contraseña debe tener al menos 8 caracteres y debe contener al menos una letra mayúscula, una letra minúscula y un número."
+  },
+  "role": {
+    "title": "Gestión de Roles",
+    "id": "Id",
+    "name": "Nombre",
+    "groupName": "Nombre del rol",
+    "groupStatus": "Estado del rol",
+    "permissions": "Permisos",
+    "user": "Usuarios",
+    "copy-permission": "Copiar Permisos",
+    "description": "Descripción",
+    "status": "Estado",
+    "all": "Todos",
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "save": "Guardar",
+    "back": "Volver"
+  },
+  "audit": {
+    "title": "Registros Transaccionales",
+    "id": "Id",
+    "date": "Fecha",
+    "key": "Indentificador",
+    "entity": "Entidad",
+    "operation": "Operación",
+    "changeBy": "Cambiado por",
+    "time": "Hora",
+    "close": "Cerrar"
+  },
+  "paginator": {
+    "items-per-page": "Artículo por página",
+    "next-page": "siguiente página",
+    "previous-page": "Página anterior",
+    "first-page": "Primera página",
+    "last-page": "Ultima página",
+    "range-page-one": "0 de {{length}}",
+    "range-page-two": "{{startIndex}} - {{endIndex}} de {{length}}"
+  },
+  "messenger": {
+    "internal-server-error": "Ha ocurrido una situacion interna. Favor de contactar al administrador del sistema",
+    "bad-request": "La acción deseada ha realizar ha resultado ser incorrecta.",
+    "not-found": "La acción deseada ha realizar no se encuentra disponible.",
+    "no-content": "Contenido solicitado no ha sido encontrado.",
+    "unauthorized": "No esta autorizado para la acción que desea relizar.",
+    "forbidden": "Contraseña y/o nombre de cuenta incorrecto.",
+    "locked": "Usuario ha sido bloqueado. Favor de comunicarse con administrador.",
+    "communicate-suppot": "Ha ocurrido un error. Favor de contactar al administrador del sistema"
+  }
+}

@@ -1,0 +1,140 @@
+<form
+  class="form"
+  [formGroup]="reactiveForm"
+  (ngSubmit)="onSubmit()"
+  [autocomplete]="false"
+>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ "user.title" | translate }}</mat-card-title>
+      <mat-card-subtitle
+        >{{ id }} -
+        {{ reactiveForm.controls["UserName"].value }}</mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>
+          {{ "user.type" | translate }}
+        </mat-label>
+        <mat-select formControlName="TypeAutentication">
+          <mat-option *ngFor="let item of loginProvider" [value]="item.id">
+            {{ item.desc }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>{{ "user.user-login" | translate }}</mat-label>
+        <input matInput formControlName="UserLogin" />
+        <mat-icon
+          *ngIf="
+            reactiveForm.controls['UserLogin'].valid &&
+            !userNameTaken &&
+            ((reactiveForm.controls['TypeAutentication'].value == 'AD' &&
+              userADExist) ||
+              reactiveForm.controls['TypeAutentication'].value == 'EX')
+          "
+          matSuffix
+          >done</mat-icon
+        >
+        <small class="error" *ngIf="userNameTaken">
+          {{ "user.user-exist" | translate }}
+        </small>
+        <small
+          class="error"
+          *ngIf="
+            reactiveForm.controls['TypeAutentication'].value == 'AD' &&
+            !userADExist
+          "
+        >
+          {{ "user.AD-Directory" | translate }}
+        </small>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>{{ "user.name" | translate }}</mat-label>
+        <input matInput formControlName="UserName" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>
+          {{ "user.phone" | translate }}
+        </mat-label>
+        <input matInput formControlName="UserPhone" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>
+          {{ "user.email" | translate }}
+        </mat-label>
+        <input matInput formControlName="UserEmail" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width mb-4" appearance="outline">
+        <mat-label>
+          {{ "user.password" | translate }}
+        </mat-label>
+        <input matInput formControlName="Password" type="password" />
+        <mat-hint>
+          {{ "user.password-policy" | translate }}
+        </mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>
+          {{ "user.status" | translate }}
+        </mat-label>
+        <mat-select formControlName="UserStatus">
+          <mat-option *ngFor="let item of userStatus" [value]="item.id">
+            {{ item.desc | translate }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-chip-list #chipListRoles>
+          <mat-chip
+            *ngFor="let role of roles"
+            [selectable]="selectable"
+            [removable]="removable"
+            (removed)="onRemoveRole(role)"
+          >
+            {{ role.GroupName }}
+            <mat-icon matChipRemove *ngIf="removable">{{
+              "user.cancel" | translate
+            }}</mat-icon>
+          </mat-chip>
+          <input
+            #roleInput
+            formControlName="GroupsAlt"
+            [matAutocomplete]="matAutocompleteRole"
+            [matChipInputFor]="chipListRoles"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          />
+        </mat-chip-list>
+        <mat-autocomplete
+          #matAutocompleteRole="matAutocomplete"
+          (optionSelected)="onSelectedRole($event)"
+        >
+          <mat-option *ngFor="let role of filteredRoles | async" [value]="role">
+            {{ role.GroupName }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        *ngIf="!readOnlyAccess"
+      >
+        <mat-icon>save</mat-icon>
+        {{ "user.save" | translate }}
+      </button>
+
+      <a mat-raised-button (click)="onBack()"> {{ "user.back" | translate }}</a>
+    </mat-card-actions>
+  </mat-card>
+</form>

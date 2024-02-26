@@ -1,0 +1,149 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #969696;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.bg-blue-color {
+  background: #0d3f5c !important;
+}
+
+.app-content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 90%;
+}
+
+.logo {
+  margin-left: 8px;
+  color: black !important;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.z-depth-5 {
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+.z-depth-2 {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.white-background {
+  background-color: white;
+}
+
+.responsive {
+  max-height: 80%;
+  height: auto;
+}
+
+.logo {
+  width: 325px;
+  height: 75px;
+}
+
+.yellow-background {
+  background: #fdd835 !important;
+}
+
+mat-sidenav-content {
+  padding-top: 20px;
+  height: 100% !important;
+}
+
+.sidenav-container {
+  height: 100%;
+  background-color: rgb(237, 236, 236);
+}
+
+.nav-caption {
+  display: inline-block;
+  padding-left: 6px;
+}
+
+/* Absolute Center Spinner */
+.loading-indicator {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.loading-indicator:before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.loading-indicator ::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: rgba(0, 0, 0, 0.3);
+}
+
+.link {
+  color: black !important;
+  cursor: pointer !important;
+}
+
+.form {
+  min-width: 150px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.slide-margin {
+  margin: 10px;
+}
+
+.error {
+  color: #ee6363;
+}

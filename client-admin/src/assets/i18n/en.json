@@ -1,0 +1,145 @@
+{
+  "navbar": {
+    "change-password": "Change Password",
+    "sign-out": "Sign Out",
+    "english": "English",
+    "spanish": "Spanish"
+  },
+  "login": {
+    "title": "Sign in to start your session",
+    "sign-in-google": "Sign in using Google+",
+    "sign-in-facebook": "Sign in using Facebook",
+    "sign-in": "Sign in",
+    "email": "Email",
+    "user-name": "Username",
+    "password": "Password",
+    "remember-me": "Remember me",
+    "forgot-password": "Forgot your password?",
+    "connector-or": "OR",
+    "create-account": "Register a new membership"
+  },
+  "register": {
+    "title": "Register a new membership",
+    "sign-in-google": "Sign in using Google+",
+    "sign-in-facebook": "Sign in using Facebook",
+    "sign-in": "Sign in",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "privacy-policy": "Privacy Policy",
+    "create-account": "Register a new membership",
+    "have-account": "I already have a membership",
+    "agree-with": "I agree to the",
+    "terms": "terms",
+    "connector-or": "OR",
+    "register": "Register"
+  },
+  "forgot-password": {
+    "title": "You forgot your password? Here you can easily retrieve a new password.",
+    "submit-buttom": "Request new password",
+    "login": "Login",
+    "register": "Register a new membership"
+  },
+  "change-password": {
+    "title": "Change password",
+    "current-password": "Current password",
+    "new-password": "New password",
+    "confirm-password": "Confirm password",
+    "back": "Back",
+    "save": "Save",
+    "password-policy": "The password must be at least 8 characters and must contain at least one uppercase letter, one lowercase letter, and one number."
+  },
+  "administration": {
+    "home": "Home",
+    "administration": "Administration",
+    "groups": "Groups",
+    "users": "Users",
+    "register": "Register",
+    "maintenance": "Maintenance"
+  },
+  "page-not-found": {
+    "title": "Oops! Page not found.",
+    "description": "We couldn't find the page you were looking for. In the meantime, you can",
+    "return-home": "return to the home page."
+  },
+  "dynamic": {
+    "search": "Search",
+    "new": "New",
+    "edit": "Edit",
+    "delete": "Delete",
+    "log": "Log"
+  },
+  "dashboard": {
+    "welcome-title": "Control Panel"
+  },
+  "user": {
+    "title": "User Management",
+    "id": "Id",
+    "username": "Username",
+    "fullname": "Full Name",
+    "status": "Status",
+    "all": "All",
+    "active": "Active",
+    "inactive": "Inactive",
+    "lock": "Lock",
+    "user-login": "Username",
+    "name": "Name",
+    "new-user": "Match new user",
+    "phone": "Phone number",
+    "email": "Email",
+    "password": "Password",
+    "type": "Type of user",
+    "save": "Save",
+    "back": "Back",
+    "user-exist": "User already exists",
+    "AD-Directory": "User does not exist in Active Directory",
+    "password-policy": "The password must be at least 8 characters and must contain at least one uppercase letter, one lowercase letter, and one number."
+  },
+  "role": {
+    "title": "Role Management",
+    "id": "Id",
+    "name": "Name",
+    "groupName": "Rol Name",
+    "groupStatus": "Rol Status",
+    "permissions": "Permission",
+    "user": "User",
+    "copy-permission": "Copy Permission",
+    "description": "Description",
+    "status": "Status",
+    "all": "All",
+    "active": "Active",
+    "inactive": "Inactive",
+    "save": "Save",
+    "back": "Back"
+  },
+  "audit": {
+    "title": "Transactional Records",
+    "id": "Id",
+    "date": "Date",
+    "key": "Key",
+    "entity": "Entity",
+    "operation": "Operation",
+    "changeBy": "Change By",
+    "time": "Time",
+    "close": "Close"
+  },
+  "paginator": {
+    "items-per-page": "Items per page",
+    "next-page": "Next page",
+    "previous-page": "Previous page",
+    "first-page": "First page",
+    "last-page": "Last page",
+    "range-page-one": "0 of {{length}}",
+    "range-page-two": "{{startIndex}} - {{endIndex}} of {{length}}"
+  },
+  "messenger": {
+    "internal-server-error": "An internal situation has occurred. Please contact the system administrator.",
+    "bad-request": "The desired action to take has turned out to be incorrect.",
+    "not-found": "The desired action to be performed is not available.",
+    "unauthorized": "You are not authorized for the action you wish to perform.",
+    "no-content": "Requested content has not been found.",
+    "forbidden": "Incorrect password and/or account name.",
+    "locked": "User has been blocked. Please contact administrator.",
+    "communicate-suppot": "An error has occurred. Please contact the system administrator."
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "UserId": 1,
+    "UserLogin": "admin",
+    "UserPassword": "",
+    "UserName": "Administrator",
+    "UserEmail": "",
+    "UserStatus": "A",
+    "IsPasswordExpires": false,
+    "UserPasswordHasBeenReset": false,
+    "TypeAutentication": "EX",
+    "PasswordFailedQuantity": 0
+  },
+  {
+    "UserId": 2,
+    "UserLogin": "dev",
+    "UserPassword": "",
+    "UserName": "Developer",
+    "UserEmail": "",
+    "UserStatus": "A",
+    "IsPasswordExpires": false,
+    "UserPasswordHasBeenReset": false,
+    "TypeAutentication": "EX",
+    "PasswordFailedQuantity": 0
+  }
+]

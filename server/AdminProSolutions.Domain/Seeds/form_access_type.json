@@ -1,0 +1,53 @@
+[
+  {
+    "FormAccessTypeId": 1,
+    "FormId": 1,
+    "AccessTypeId": 1
+  },
+  {
+    "FormAccessTypeId": 2,
+    "FormId": 1,
+    "AccessTypeId": 2
+  },
+  {
+    "FormAccessTypeId": 3,
+    "FormId": 1,
+    "AccessTypeId": 3
+  },
+  {
+    "FormAccessTypeId": 4,
+    "FormId": 1,
+    "AccessTypeId": 4
+  },
+
+  {
+    "FormAccessTypeId": 5,
+    "FormId": 2,
+    "AccessTypeId": 1
+  },
+  {
+    "FormAccessTypeId": 6,
+    "FormId": 2,
+    "AccessTypeId": 2
+  },
+  {
+    "FormAccessTypeId": 7,
+    "FormId": 2,
+    "AccessTypeId": 3
+  },
+  {
+    "FormAccessTypeId": 8,
+    "FormId": 2,
+    "AccessTypeId": 4
+  },
+  {
+    "FormAccessTypeId": 9,
+    "FormId": 3,
+    "AccessTypeId": 1
+  },
+  {
+    "FormAccessTypeId": 10,
+    "FormId": 4,
+    "AccessTypeId": 1
+  },
+]

@@ -1,0 +1,26 @@
+<mat-form-field class="full-width" appearance="outline" *ngIf="field.visible">
+  <mat-label>{{ field.label | translate }}</mat-label>
+  <mat-date-range-input [formGroup]="group" [rangePicker]="picker">
+    <input
+      matStartDate
+      [formControlName]="field.name"
+      [placeholder]="field.label | translate"
+    />
+    <input
+      matEndDate
+      [formControlName]="field.nameTwo || ''"
+      [placeholder]="field.label | translate"
+    />
+  </mat-date-range-input>
+  <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-date-range-picker #picker></mat-date-range-picker>
+  <ng-container
+    *ngFor="let validation of field.validations"
+    ngProjectAs="mat-error"
+  >
+    <mat-error *ngIf="group.get(field.name)?.hasError(validation.name)">{{
+      validation.message
+    }}</mat-error>
+  </ng-container>
+</mat-form-field>

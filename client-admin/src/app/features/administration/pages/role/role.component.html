@@ -1,0 +1,246 @@
+<form class="form" [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ "role.title" | translate }}</mat-card-title>
+      <mat-card-subtitle
+        >{{ id }} -
+        {{ reactiveForm.controls["GroupName"].value }}</mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>{{ "role.groupName" | translate }}</mat-label>
+        <input matInput formControlName="GroupName" />
+        <mat-icon
+          *ngIf="reactiveForm.controls['GroupName'].valid && !nameTaken"
+          matSuffix
+          >done</mat-icon
+        >
+        <small class="error" *ngIf="nameTaken">
+          {{ "role.error-message-name.exist" | translate }}
+        </small>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>{{ "role.description" | translate }}</mat-label>
+        <input matInput formControlName="GroupDescription" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>{{ "role.groupStatus" | translate }}</mat-label>
+        <mat-select formControlName="GroupStatus">
+          <mat-option *ngFor="let item of status" [value]="item.id">
+            {{ item.desc | translate }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-tab-group>
+        <mat-tab [label]="'role.permissions' | translate">
+          <div
+            class="flex flex-row justify-end items-end content-end"
+            style="margin-top: 10px"
+          >
+            <div class="col"></div>
+            <div class="col">
+              <mat-form-field *ngIf="!readOnlyAccess" appearance="outline">
+                <mat-label>{{ "role.copy-permission" | translate }}</mat-label>
+                <mat-select (selectionChange)="onCopyPermissionChange($event)">
+                  <option value=""></option>
+                  <mat-option
+                    *ngFor="let item of rolesToCopy"
+                    [value]="item.GroupId"
+                  >
+                    {{ item.GroupName }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col m-auto">
+              <mat-slide-toggle
+                *ngIf="!readOnlyAccess"
+                #allPermissionsToggle
+                [color]="primaryColor"
+                (change)="onSelectAllChange($event)"
+              >
+                {{ "role.all" | translate }}
+              </mat-slide-toggle>
+            </div>
+          </div>
+
+          <table
+            #permissionsTable
+            mat-table
+            [dataSource]="dsPermissions"
+            multiTemplateDataRows
+            class="mat-elevation-z8"
+          >
+            <!-- details Column -->
+            <ng-container matColumnDef="form">
+              <th mat-header-cell *matHeaderCellDef></th>
+              <td mat-cell *matCellDef="let element">
+                <i
+                  class="fa-solid fa-square-check"
+                  *ngIf="star(element.AccessTypes)"
+                ></i>
+                <i
+                  class="fa-solid fa-square-check description"
+                  *ngIf="starHalf(element.AccessTypes)"
+                ></i>
+                <b> {{ element.Form.FormModule }}</b>
+                <small class="description">
+                  {{ element.Form.FormDescription }}</small
+                >
+              </td>
+            </ng-container>
+
+            <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+            <ng-container matColumnDef="expandedDetail">
+              <td
+                mat-cell
+                *matCellDef="let element"
+                [attr.colspan]="dcPermnissions.length"
+              >
+                <div
+                  [@detailExpand]="
+                    element == expandedElement ? 'expanded' : 'collapsed'
+                  "
+                >
+                  <section *ngFor="let accessType of element.AccessTypes">
+                    <mat-slide-toggle
+                      [disabled]="readOnlyAccess"
+                      [color]="primaryColor"
+                      [checked]="accessType.Checked"
+                      (change)="onPermissionChange()"
+                      [(ngModel)]="accessType.checked"
+                      [ngModelOptions]="{ standalone: true }"
+                    >
+                      {{ accessType.AccessTypeDescription }}
+                    </mat-slide-toggle>
+                  </section>
+                </div>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="dcPermnissions"></tr>
+            <tr
+              mat-row
+              *matRowDef="let row; columns: dcPermnissions"
+              class="element-row"
+              [class.expanded]="expandedElement == row"
+              (click)="expandedElement = row"
+            ></tr>
+
+            <tr
+              mat-row
+              *matRowDef="let row; columns: ['expandedDetail']"
+              class="detail-row"
+            ></tr>
+          </table>
+
+          <mat-paginator
+            #paginatorPermissions
+            [pageSize]="pageSize"
+            [pageSizeOptions]="pageSizeOptions"
+            (page)="pageEventPermissions = $event"
+          >
+          </mat-paginator>
+        </mat-tab>
+        <mat-tab [label]="'role.user' | translate">
+          <mat-form-field
+            *ngIf="!readOnlyAccess"
+            class="full-width"
+            appearance="outline"
+          >
+            <input
+              #newUserInput
+              matInput
+              [placeholder]="'user.new-user' | translate"
+              aria-label="State"
+              [matAutocomplete]="auto"
+              [formControl]="stateCtrl"
+            />
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-autocomplete
+              #auto="matAutocomplete"
+              (optionSelected)="onSelectedUser($event)"
+            >
+              <mat-option
+                *ngFor="let user of filteredUsers | async"
+                [value]="user"
+              >
+                <span>{{ user.FullName }}</span> |
+                <small> {{ user.UserLogin }}</small>
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <table
+            mat-table
+            [dataSource]="dsUsers"
+            matSort
+            class="mat-elevation-z8"
+          >
+            <!-- UserLogin Column -->
+            <ng-container matColumnDef="userLogin">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                {{ "user.user-login" | translate }}
+              </th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.UserLogin }}
+              </td>
+            </ng-container>
+
+            <!-- FullName Column -->
+            <ng-container matColumnDef="fullName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                {{ "user.name" | translate }}
+              </th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.FullName }}
+              </td>
+            </ng-container>
+
+            <!-- Action Column -->
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef></th>
+              <td mat-cell *matCellDef="let element">
+                <button
+                  *ngIf="!readOnlyAccess"
+                  type="button"
+                  mat-button
+                  (click)="onDeleteUser(element)"
+                >
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="dcUsers"></tr>
+            <tr mat-row *matRowDef="let row; columns: dcUsers"></tr>
+          </table>
+          <mat-paginator
+            #paginatorUsers
+            [pageSize]="pageSize"
+            [pageSizeOptions]="pageSizeOptions"
+            (page)="pageEventUsers = $event"
+          >
+          </mat-paginator>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        *ngIf="(id && editAccess) || (!id && createAccess)"
+        [disabled]="!reactiveForm.valid || nameTaken"
+      >
+        <mat-icon>save</mat-icon>
+        {{ "role.save" | translate }}
+      </button>
+      <a mat-raised-button (click)="onBack()">{{ "role.back" | translate }}</a>
+    </mat-card-actions>
+  </mat-card>
+</form>
