@@ -1,1 +1,18 @@
-<p>employee works!</p>
+<div class="row mb-3">
+  <div class="col">
+    <button mat-icon-button (click)="goBack()" color="basic" align="end">
+      <i class="fa-solid fa-arrow-left-long fa-xl"></i>
+    </button>
+  </div>
+</div>
+<app-dynamic-form
+  [title]="title"
+  [service]="serviceName"
+  [fields]="fields"
+  [create]="create"
+  [edit]="edit"
+  [id]="id"
+  [height]="height"
+  [width]="width"
+  (submit)="onClose($event)"
+></app-dynamic-form>

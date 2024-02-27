@@ -40,7 +40,7 @@ namespace AdminProSolutions.Infrastructure.Repositories.Authentication
                     Audience = "http://www.example.com",
                     Issuer = "self",
                     Subject = claims,
-                    Expires = DateTime.UtcNow.AddDays(_appSettings.TokenValidDays),
+                    Expires = DateTime.UtcNow.AddHours(_appSettings.TokenValidDuration),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
                 };
 

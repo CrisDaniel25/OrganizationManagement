@@ -3,6 +3,8 @@ using AdminProSolutions.Domain.Dtos.Authentication;
 using AdminProSolutions.Domain.Entities.Authentication;
 using AdminProSolutions.Domain.Entities.Miscellaneous;
 using AdminProSolutions.Domain.Dtos.Miscellaneous;
+using AdminProSolutions.Domain.Entities.Organization;
+using AdminProSolutions.Domain.Dtos.Organization;
 
 namespace AdminProSolutions.API.Helpers
 {
@@ -37,6 +39,11 @@ namespace AdminProSolutions.API.Helpers
             CreateMap<Audit, AuditDto>();
             CreateMap<AuditDto, Audit>();
 
+            CreateMap<Clients, ClientDto>();
+            CreateMap<ClientDto, Clients>();
+
+            CreateMap<Employees, EmployeeDto>();
+            CreateMap<EmployeeDto, Employees>();
         }
     }
 }

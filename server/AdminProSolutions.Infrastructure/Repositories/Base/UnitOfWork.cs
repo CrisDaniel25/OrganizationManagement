@@ -2,6 +2,7 @@
 using AdminProSolutions.Domain.Interfaces.Base;
 using AdminProSolutions.Domain.Interfaces.Messenger;
 using AdminProSolutions.Domain.Interfaces.Miscellaneous;
+using AdminProSolutions.Domain.Interfaces.Organization;
 using AdminProSolutions.Infrastructure.Data;
 
 namespace AdminProSolutions.Infrastructure.Repositories.Base
@@ -15,8 +16,10 @@ namespace AdminProSolutions.Infrastructure.Repositories.Base
         public IUsers Users { get; }
         public IGroups Groups { get; }
         public IEmail Email { get; }
+        public IClients Clients { get; }
+        public IEmployees Employees { get; }
 
-        public UnitOfWork(DataContext context, IUsers users, IGroups groups, IAudit audit, IAuthetication authetication, IActiveDirectory activeDirectory, IEmail email)
+        public UnitOfWork(DataContext context, IUsers users, IGroups groups, IAudit audit, IAuthetication authetication, IActiveDirectory activeDirectory, IEmail email, IClients clients, IEmployees employees)
         {
             _context = context;
             Authetication = authetication;
@@ -25,6 +28,8 @@ namespace AdminProSolutions.Infrastructure.Repositories.Base
             Groups = groups;
             ActiveDirectory = activeDirectory;
             Email = email;
+            Clients = clients;
+            Employees = employees;
         }
 
         public void Dispose()

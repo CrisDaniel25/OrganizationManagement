@@ -13,7 +13,7 @@
         public DateTime DateTime { get; set; } = DateTime.Now;
         public string KeyValues { get; set; } = string.Empty;
         public string? OldValues { get; set; } = string.Empty;
-        public string NewValues { get; set; } = string.Empty;
+        public string? NewValues { get; set; } = string.Empty;
         public string Operation { get; set; } = string.Empty;
         public string ChangeBy { get; set; } = string.Empty;
     }

@@ -22,5 +22,17 @@
     "FormModule": "Admin",
     "FormName": "Dashboard",
     "FormDescription": "Reporting"
+  },
+  {
+    "FormId": 5,
+    "FormModule": "Organization",
+    "FormName": "Clients",
+    "FormDescription": "Manage Clients"
+  },
+  {
+    "FormId": 6,
+    "FormModule": "Organization",
+    "FormName": "Employees",
+    "FormDescription": "Manage Employees"
   }
 ]

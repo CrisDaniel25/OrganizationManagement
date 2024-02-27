@@ -1,5 +1,6 @@
 ﻿using AdminProSolutions.Domain.Entities.Authentication;
 using AdminProSolutions.Domain.Entities.Miscellaneous;
+using AdminProSolutions.Domain.Entities.Organization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
@@ -27,6 +28,11 @@ namespace AdminProSolutions.Infrastructure.Data
         public virtual DbSet<Groups> Groups { get; set; }
         public virtual DbSet<GroupsUsers> GroupsUsers { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        #endregion
+
+        #region ORGANIZATION
+        public virtual DbSet<Clients> Clients { get; set; }
+        public virtual DbSet<Employees> Employees { get; set; }
         #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -269,6 +275,108 @@ namespace AdminProSolutions.Infrastructure.Data
                 entity.Ignore(e => e.Claims);
                 entity.Ignore(e => e.Token);
                 entity.Ignore(e => e.FullName);
+            });
+
+            modelBuilder.Entity<Clients>(entity =>
+            {
+                entity.HasKey(e => e.ClientId);
+
+                entity.HasIndex(e => e.Name)
+                      .IsUnique();
+
+                entity.Property(e => e.Name)
+                      .HasMaxLength(100);
+
+                entity.Property(e => e.Email)
+                      .HasMaxLength(50);
+
+                entity.Property(e => e.Industry)
+                      .HasMaxLength(150);
+
+                entity.Property(e => e.Headquarters)
+                      .HasMaxLength(200);
+
+                entity.Property(e => e.Phone)
+                      .HasMaxLength(50);
+
+                entity.Property(e => e.Website)
+                      .HasMaxLength(100);
+
+                entity.Property(e => e.Founded)
+                      .IsRequired();
+
+                entity.Property(e => e.CreatedDate)
+                      .HasColumnType("datetime")
+                      .HasDefaultValue(DateTime.UtcNow)
+                      .ValueGeneratedOnAdd();
+
+                entity.Property(e => e.UpdatedDate)
+                       .HasColumnType("datetime")
+                       .HasDefaultValue(DateTime.UtcNow)
+                       .ValueGeneratedOnUpdate();
+            });
+
+            modelBuilder.Entity<Employees>(entity =>
+            {
+                entity.HasKey(e => e.EmployeeId);
+
+                entity.HasIndex(e => e.IdentityDocument)
+                      .IsUnique();
+
+                entity.Property(e => e.FirstName)
+                      .HasMaxLength(100);
+
+                entity.Property(e => e.MiddleName)
+                      .HasMaxLength(100);
+
+                entity.Property(e => e.LastName)
+                      .HasMaxLength(100);
+
+                entity.Property(e => e.Email)
+                      .HasMaxLength(50);
+
+                entity.Property(e => e.Phone)
+                      .HasMaxLength(50);
+
+                entity.Property(e => e.Gender)
+                      .HasMaxLength(1)
+                      .IsUnicode(false)
+                      .IsFixedLength();
+
+                entity.Property(e => e.BirthDate)
+                      .HasColumnType("datetime");
+
+                entity.Property(e => e.StartDate)
+                      .HasColumnType("datetime");
+
+                entity.Property(e => e.EndDate)
+                      .HasColumnType("datetime");
+
+                entity.Property(e => e.StartDate)
+                      .HasColumnType("datetime")
+                      .HasDefaultValue(DateTime.UtcNow)
+                      .ValueGeneratedOnAdd();
+
+                entity.Property(e => e.Department)
+                      .HasMaxLength(150);
+
+                entity.Property(e => e.Position)
+                      .HasMaxLength(150);
+
+                entity.HasOne(e => e.Client)
+                      .WithMany(e => e.Employees)
+                      .HasForeignKey(e => e.ClientId)
+                      .HasConstraintName("FK_Employees_Client");
+
+                entity.Property(e => e.CreatedDate)
+                      .HasColumnType("datetime")
+                      .HasDefaultValue(DateTime.UtcNow)
+                      .ValueGeneratedOnAdd();
+
+                entity.Property(e => e.UpdatedDate)
+                       .HasColumnType("datetime")
+                       .HasDefaultValue(DateTime.UtcNow)
+                       .ValueGeneratedOnUpdate();
             });
         }
 

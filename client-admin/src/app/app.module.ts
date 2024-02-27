@@ -99,7 +99,7 @@ import { CheckBoxComponent } from './shared/components/fields/check-box/check-bo
 import { TextAreaComponent } from './shared/components/fields/text-area/text-area.component';
 import { DateRangeComponent } from './shared/components/fields/date-range/date-range.component';
 
-/* @Component feature Administration System Component import */
+/* @Component feature Administration Component import */
 import { LoginComponent } from './features/administration/pages/login/login.component';
 import { RegisterComponent } from './features/administration/pages/register/register.component';
 import { ForgotPasswordComponent } from './features/administration/pages/forgot-password/forgot-password.component';
@@ -118,6 +118,14 @@ import { AuditListComponent } from './features/administration/pages/audit-list/a
 import { RoleListComponent } from './features/administration/pages/role-list/role-list.component';
 import { RoleComponent } from './features/administration/pages/role/role.component';
 
+/* @Component feature Organization Component import */
+import { ClientListComponent } from './features/organization/pages/client-list/client-list.component';
+import { ClientComponent } from './features/organization/pages/client/client.component';
+import { ClientConfirmDeleteComponent } from './features/organization/pages/client-confirm-delete/client-confirm-delete.component';
+import { EmployeeComponent } from './features/organization/pages/employee/employee.component';
+import { EmployeeListComponent } from './features/organization/pages/employee-list/employee-list.component';
+import { EmployeeConfirmDeleteComponent } from './features/organization/pages/employee-confirm-delete/employee-confirm-delete.component';
+
 /* @Directives imports */
 import { DragNDropDirective, SideNavAnimationDirective, DynamicFieldDirective, ProfileCardDirective, StylingDialogTitleDirective, BorderlessAccordionStyleDirective } from './shared/directives/index';
 
@@ -129,12 +137,6 @@ import { SortByPipe } from './shared/pipes/sort-by.pipe';
 
 /* Paginator translation service */
 import { CustomPaginatorService } from './core/services/custom-paginator.service';
-import { ClientListComponent } from './features/organization/pages/client-list/client-list.component';
-import { ClientComponent } from './features/organization/pages/client/client.component';
-import { ClientConfirmDeleteComponent } from './features/organization/pages/client-confirm-delete/client-confirm-delete.component';
-import { EmployeeComponent } from './features/organization/pages/employee/employee.component';
-import { EmployeeListComponent } from './features/organization/pages/employee-list/employee-list.component';
-import { EmployeeConfirmDeleteComponent } from './features/organization/pages/employee-confirm-delete/employee-confirm-delete.component';
 
 /* AoT requires an exported function for factories */
 export function HttpLoaderFactory(httpClient: HttpClient) {

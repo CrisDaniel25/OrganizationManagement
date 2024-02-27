@@ -18,10 +18,14 @@ export class ClientListComponent {
   delete: string[] = MenuRoles.CLIENTS_UPDATE;
   log: string[] = MenuRoles.AUDITS;
 
-  searchDdlFields: FieldConfig[] = [
-  ];
+  searchDdlFields: FieldConfig[] = [];
 
   displayedColumns: GridColumns[] = [
+    { name: 'ClientId', label: 'client.id', isId: true },
+    { name: 'Name', label: 'client.name' },
+    { name: 'Email', label: 'client.email' },
+    { name: 'CompanySize', label: 'client.company-size' },
+    { name: 'Founded', label: 'client.founded', isDate: true, isTime: true },
   ];
 
   constructor(private router: Router) { }

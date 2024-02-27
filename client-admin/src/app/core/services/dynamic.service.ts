@@ -16,6 +16,10 @@ export class DynamicService {
     );
   }
 
+  getChildList(parentId: string | number, parentName: string) {
+    return this.http.get(`${environment.baseURL}/${this.serviceName}/${parentName}/${parentId}`);
+  }
+
   getById(id: string | number): Promise<any> {
     return <Promise<any>>(
       this.http

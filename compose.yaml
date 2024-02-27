@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  backend:
+    image: organization-management:latest
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+
+networks:
+  default:
+    driver: bridge

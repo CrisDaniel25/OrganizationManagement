@@ -46,7 +46,7 @@ namespace AdminProSolutions.Infrastructure.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2023, 11, 24, 12, 55, 4, 107, DateTimeKind.Utc).AddTicks(1696));
+                        .HasDefaultValue(new DateTime(2024, 2, 27, 16, 50, 22, 645, DateTimeKind.Utc).AddTicks(5854));
 
                     b.Property<int?>("CreatedUser")
                         .HasColumnType("int");
@@ -54,7 +54,7 @@ namespace AdminProSolutions.Infrastructure.Migrations
                     b.Property<DateTime?>("UpdatedDate")
                         .ValueGeneratedOnUpdate()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2023, 11, 24, 12, 55, 4, 107, DateTimeKind.Utc).AddTicks(4500));
+                        .HasDefaultValue(new DateTime(2024, 2, 27, 16, 50, 22, 645, DateTimeKind.Utc).AddTicks(7336));
 
                     b.Property<int?>("UpdatedUser")
                         .HasColumnType("int");
@@ -75,7 +75,7 @@ namespace AdminProSolutions.Infrastructure.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2023, 11, 24, 12, 55, 4, 108, DateTimeKind.Utc).AddTicks(5938));
+                        .HasDefaultValue(new DateTime(2024, 2, 27, 16, 50, 22, 646, DateTimeKind.Utc).AddTicks(3600));
 
                     b.Property<int?>("CreatedUser")
                         .HasColumnType("int");
@@ -101,7 +101,7 @@ namespace AdminProSolutions.Infrastructure.Migrations
                     b.Property<DateTime?>("UpdatedDate")
                         .ValueGeneratedOnUpdate()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2023, 11, 24, 12, 55, 4, 108, DateTimeKind.Utc).AddTicks(7962));
+                        .HasDefaultValue(new DateTime(2024, 2, 27, 16, 50, 22, 646, DateTimeKind.Utc).AddTicks(5902));
 
                     b.Property<int?>("UpdatedUser")
                         .HasColumnType("int");
@@ -125,7 +125,7 @@ namespace AdminProSolutions.Infrastructure.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2023, 11, 24, 12, 55, 4, 110, DateTimeKind.Utc).AddTicks(223));
+                        .HasDefaultValue(new DateTime(2024, 2, 27, 16, 50, 22, 647, DateTimeKind.Utc).AddTicks(2811));
 
                     b.Property<int?>("CreatedUser")
                         .HasColumnType("int");
@@ -136,7 +136,7 @@ namespace AdminProSolutions.Infrastructure.Migrations
                     b.Property<DateTime?>("UpdatedDate")
                         .ValueGeneratedOnUpdate()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2023, 11, 24, 12, 55, 4, 110, DateTimeKind.Utc).AddTicks(2831));
+                        .HasDefaultValue(new DateTime(2024, 2, 27, 16, 50, 22, 647, DateTimeKind.Utc).AddTicks(4333));
 
                     b.Property<int?>("UpdatedUser")
                         .HasColumnType("int");
@@ -159,7 +159,7 @@ namespace AdminProSolutions.Infrastructure.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2023, 11, 24, 12, 55, 4, 112, DateTimeKind.Utc).AddTicks(9258));
+                        .HasDefaultValue(new DateTime(2024, 2, 27, 16, 50, 22, 649, DateTimeKind.Utc).AddTicks(568));
 
                     b.Property<int?>("CreatedUser")
                         .HasColumnType("int");
@@ -167,7 +167,7 @@ namespace AdminProSolutions.Infrastructure.Migrations
                     b.Property<DateTime?>("UpdatedDate")
                         .ValueGeneratedOnUpdate()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2023, 11, 24, 12, 55, 4, 113, DateTimeKind.Utc).AddTicks(4801));
+                        .HasDefaultValue(new DateTime(2024, 2, 27, 16, 50, 22, 649, DateTimeKind.Utc).AddTicks(2469));
 
                     b.Property<int?>("UpdatedUser")
                         .HasColumnType("int");
@@ -196,7 +196,7 @@ namespace AdminProSolutions.Infrastructure.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2023, 11, 24, 12, 55, 4, 115, DateTimeKind.Utc).AddTicks(8566));
+                        .HasDefaultValue(new DateTime(2024, 2, 27, 16, 50, 22, 650, DateTimeKind.Utc).AddTicks(6069));
 
                     b.Property<int?>("CreatedUser")
                         .HasColumnType("int");
@@ -223,7 +223,7 @@ namespace AdminProSolutions.Infrastructure.Migrations
                     b.Property<DateTime?>("UpdatedDate")
                         .ValueGeneratedOnUpdate()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2023, 11, 24, 12, 55, 4, 116, DateTimeKind.Utc).AddTicks(1596));
+                        .HasDefaultValue(new DateTime(2024, 2, 27, 16, 50, 22, 650, DateTimeKind.Utc).AddTicks(8068));
 
                     b.Property<int?>("UpdatedUser")
                         .HasColumnType("int");
@@ -244,7 +244,7 @@ namespace AdminProSolutions.Infrastructure.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2023, 11, 24, 12, 55, 4, 116, DateTimeKind.Utc).AddTicks(5706));
+                        .HasDefaultValue(new DateTime(2024, 2, 27, 16, 50, 22, 651, DateTimeKind.Utc).AddTicks(1145));
 
                     b.Property<int?>("CreatedUser")
                         .HasColumnType("int");
@@ -274,7 +274,7 @@ namespace AdminProSolutions.Infrastructure.Migrations
                     b.Property<DateTime?>("UpdatedDate")
                         .ValueGeneratedOnUpdate()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2023, 11, 24, 12, 55, 4, 116, DateTimeKind.Utc).AddTicks(9246));
+                        .HasDefaultValue(new DateTime(2024, 2, 27, 16, 50, 22, 651, DateTimeKind.Utc).AddTicks(3057));
 
                     b.Property<int?>("UpdatedUser")
                         .HasColumnType("int");
@@ -311,7 +311,7 @@ namespace AdminProSolutions.Infrastructure.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2023, 11, 24, 12, 55, 4, 119, DateTimeKind.Utc).AddTicks(8888));
+                        .HasDefaultValue(new DateTime(2024, 2, 27, 16, 50, 22, 652, DateTimeKind.Utc).AddTicks(7084));
 
                     b.Property<int?>("CreatedUser")
                         .HasColumnType("int");
@@ -342,7 +342,7 @@ namespace AdminProSolutions.Infrastructure.Migrations
                     b.Property<DateTime?>("UpdatedDate")
                         .ValueGeneratedOnUpdate()
                         .HasColumnType("datetime")
-                        .HasDefaultValue(new DateTime(2023, 11, 24, 12, 55, 4, 120, DateTimeKind.Utc).AddTicks(2064));
+                        .HasDefaultValue(new DateTime(2024, 2, 27, 16, 50, 22, 653, DateTimeKind.Utc).AddTicks(1200));
 
                     b.Property<int?>("UpdatedUser")
                         .HasColumnType("int");
@@ -425,7 +425,6 @@ namespace AdminProSolutions.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NewValues")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("OldValues")
@@ -442,6 +441,171 @@ namespace AdminProSolutions.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Audits");
+                });
+
+            modelBuilder.Entity("AdminProSolutions.Domain.Entities.Organization.Clients", b =>
+                {
+                    b.Property<int>("ClientId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ClientId"));
+
+                    b.Property<int>("CompanySize")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValue(new DateTime(2024, 2, 27, 16, 50, 22, 654, DateTimeKind.Utc).AddTicks(7292));
+
+                    b.Property<int?>("CreatedUser")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("Founded")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Headquarters")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Industry")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .ValueGeneratedOnUpdate()
+                        .HasColumnType("datetime")
+                        .HasDefaultValue(new DateTime(2024, 2, 27, 16, 50, 22, 654, DateTimeKind.Utc).AddTicks(8207));
+
+                    b.Property<int?>("UpdatedUser")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Website")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("ClientId");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("Clients");
+                });
+
+            modelBuilder.Entity("AdminProSolutions.Domain.Entities.Organization.Employees", b =>
+                {
+                    b.Property<int>("EmployeeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EmployeeId"));
+
+                    b.Property<DateTime>("BirthDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<int>("ClientId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValue(new DateTime(2024, 2, 27, 16, 50, 22, 656, DateTimeKind.Utc).AddTicks(8817));
+
+                    b.Property<int?>("CreatedUser")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Department")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasMaxLength(1)
+                        .IsUnicode(false)
+                        .HasColumnType("char(1)")
+                        .IsFixedLength();
+
+                    b.Property<string>("IdentityDocument")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("MiddleName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Position")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<DateTime>("StartDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValue(new DateTime(2024, 2, 27, 16, 50, 22, 656, DateTimeKind.Utc).AddTicks(1107));
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .ValueGeneratedOnUpdate()
+                        .HasColumnType("datetime")
+                        .HasDefaultValue(new DateTime(2024, 2, 27, 16, 50, 22, 657, DateTimeKind.Utc).AddTicks(625));
+
+                    b.Property<int?>("UpdatedUser")
+                        .HasColumnType("int");
+
+                    b.HasKey("EmployeeId");
+
+                    b.HasIndex("ClientId");
+
+                    b.HasIndex("IdentityDocument")
+                        .IsUnique();
+
+                    b.ToTable("Employees");
                 });
 
             modelBuilder.Entity("AdminProSolutions.Domain.Entities.Authentication.FormsAccessTypes", b =>
@@ -493,6 +657,18 @@ namespace AdminProSolutions.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("AdminProSolutions.Domain.Entities.Organization.Employees", b =>
+                {
+                    b.HasOne("AdminProSolutions.Domain.Entities.Organization.Clients", "Client")
+                        .WithMany("Employees")
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_Employees_Client");
+
+                    b.Navigation("Client");
+                });
+
             modelBuilder.Entity("AdminProSolutions.Domain.Entities.Authentication.Forms", b =>
                 {
                     b.Navigation("FormsAccessTypes");
@@ -513,6 +689,11 @@ namespace AdminProSolutions.Infrastructure.Migrations
             modelBuilder.Entity("AdminProSolutions.Domain.Entities.Authentication.Users", b =>
                 {
                     b.Navigation("GroupUsers");
+                });
+
+            modelBuilder.Entity("AdminProSolutions.Domain.Entities.Organization.Clients", b =>
+                {
+                    b.Navigation("Employees");
                 });
 #pragma warning restore 612, 618
         }

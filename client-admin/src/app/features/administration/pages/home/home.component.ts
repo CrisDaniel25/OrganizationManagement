@@ -30,6 +30,16 @@ export class HomeComponent implements OnInit {
       badgeContent: 0
     },
     {
+      displayName: 'administration.client',
+      iconName: 'fa-solid fa-building-user',
+      route: '/home/client-list',
+      visible: this.appService.checkMenuRoleAccess(MenuRoles.CLIENTS),
+      isOpen: false,
+      hasBadge: false,
+      badgeColor: 'accent',
+      badgeContent: 0
+    },
+    {
       displayName: 'administration.administration',
       iconName: 'fas fa-copy',
       visible:
@@ -68,19 +78,9 @@ export class HomeComponent implements OnInit {
           badgeContent: 0
         },
       ],
-      isOpen: true,
-      badgeColor: 'accent',
-      hasBadge: true,
-      badgeContent: 0
-    },
-    {
-      displayName: 'administration.maintenance',
-      iconName: 'fa-solid fa-gear',
-      route: '/maintenance',
-      visible: false,
       isOpen: false,
-      hasBadge: false,
       badgeColor: 'accent',
+      hasBadge: false,
       badgeContent: 0
     }
   ];

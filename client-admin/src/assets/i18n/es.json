@@ -53,7 +53,8 @@
     "groups": "Grupos",
     "users": "Usuarios",
     "register": "Registros",
-    "maintenance": "Mantenimiento"
+    "maintenance": "Mantenimiento",
+    "client": "Compañias"
   },
   "page-not-found": {
     "title": "¡Ups! Página no encontró.",
@@ -139,5 +140,35 @@
     "forbidden": "Contraseña y/o nombre de cuenta incorrecto.",
     "locked": "Usuario ha sido bloqueado. Favor de comunicarse con administrador.",
     "communicate-suppot": "Ha ocurrido un error. Favor de contactar al administrador del sistema"
+  },
+  "client": {
+    "title": "Gestión de Empresas",
+    "id": "Id",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "company-size": "Tamaño de la empresa",
+    "founded": "Fundado",
+    "phone": "Número de teléfono",
+    "website": "Sitio web",
+    "industria": "Industria",
+    "headquarters": "Sede",
+    "submit": "Enviar"
+  },
+  "employee": {
+    "title": "Gestión de Empleados",
+    "id": "Id",
+    "first-name": "Primer Nombre",
+    "middle-name": "Segundo Nombre",
+    "last-name": "Apellidos",
+    "email":"Correo Electrónico",
+    "department": "Department",
+    "position": "Position",
+    "start-date": "Start Date",
+    "end-date": "End Date",
+    "birth-date": "Birth Date",
+    "is-active": "Active",
+    "identity-document": "Docuemnto de Identidad",
+    "gender": "Genero",
+    "submit": "Enviar"
   }
 }

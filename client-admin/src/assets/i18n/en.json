@@ -55,7 +55,8 @@
     "groups": "Groups",
     "users": "Users",
     "register": "Register",
-    "maintenance": "Maintenance"
+    "maintenance": "Maintenance",
+    "client": "Companies"
   },
   "page-not-found": {
     "title": "Oops! Page not found.",
@@ -141,5 +142,35 @@
     "forbidden": "Incorrect password and/or account name.",
     "locked": "User has been blocked. Please contact administrator.",
     "communicate-suppot": "An error has occurred. Please contact the system administrator."
+  },
+  "client": {
+    "title": "Companies Management",
+    "id": "Id",
+    "name": "Name",
+    "email": "Email",
+    "company-size": "Company size",
+    "founded": "Founded",
+    "phone": "Phone number",
+    "website": "Website",
+    "industry": "Industry",
+    "headquarters": "Headquarters",
+    "submit": "Send"
+  },
+  "employee": {
+    "title": "Employee Management",
+    "id": "Id",
+    "first-name": "First Name",
+    "middle-name": "Middle Name",
+    "last-name": "Last name",
+    "email":"Email",
+    "department": "Department",
+    "position": "Position",
+    "start-date": "Start Date",
+    "end-date": "End Date",
+    "birth-date": "Birth Date",
+    "is-active": "Active",
+    "identity-document": "Identity Document",
+    "gender": "Gender",
+    "submit": "Send"
   }
 }

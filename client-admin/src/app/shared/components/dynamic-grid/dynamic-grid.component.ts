@@ -33,6 +33,8 @@ const moment = _moment || '' /*_rollupMoment */;
 
 })
 export class DynamicGridComponent implements OnInit, AfterViewInit {
+  @Input() parentId: string | number | null = null;
+  @Input() parentName: string | null = null;
   /* DATA COLUMNS TO BE DISPLAYED */
   @Input()
   displayedDataColumns: GridColumns[] = [];
@@ -120,51 +122,81 @@ export class DynamicGridComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     this.appService.loading = true;
-    this.dynamicService.get(this.serviceFilter).subscribe(
-      (res: any) => {
-        this.lenght = res.length;
-        this.dataSource = new MatTableDataSource();
-        this.dataSource.filterPredicate = this.filterPredicate();
-        this.dataSource.data = res;
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-        this.appService.loading = false;
-      },
-      (error: any) => {
-        this.appService.loading = false;
-        this.messengerService.addMessage(error);
-      }
-    );
+    if (!this.parentId && !this.parentName) {
+      this.dynamicService.get(this.serviceFilter).subscribe(
+        (res: any) => {
+          this.lenght = res.length;
+          this.dataSource = new MatTableDataSource();
+          this.dataSource.filterPredicate = this.filterPredicate();
+          this.dataSource.data = res;
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
+          this.appService.loading = false;
+        },
+        (error: any) => {
+          this.appService.loading = false;
+          this.messengerService.addMessage(error);
+        }
+      );
+    } else if (this.parentId && this.parentName) {
+      this.dynamicService.getChildList(this.parentId, this.parentName).subscribe(
+        (res: any) => {
+          this.lenght = res.length;
+          this.dataSource = new MatTableDataSource();
+          this.dataSource.filterPredicate = this.filterPredicate();
+          this.dataSource.data = res;
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
+          this.appService.loading = false;
+        },
+        (error: any) => {
+          this.appService.loading = false;
+          this.messengerService.addMessage(error);
+        }
+      );
+    }
   }
 
   goToNew() {
-    if (this.entityView) {
+    if (this.entityView && !this.parentName) {
       this.router.navigate([`/home/${this.entityView}`]);
-    } else {
+    } else if (this.entityView && this.parentName) {
+      this.router.navigate([`/home/${this.parentName}/${this.parentId}/${this.entityView}`]);
+    }
+    else {
       this.onNew.emit();
     }
   }
 
   goToEdit(id: string | number) {
-    if (this.entityView) {
+    if (this.entityView && !this.parentName) {
       this.router.navigate([`/home/${this.entityView}`, id]);
-    } else {
+    } else if (this.entityView && this.parentName) {
+      this.router.navigate([`/home/${this.parentName}/${this.parentId}/${this.entityView}`, id]);
+    }
+    else {
       this.onEdit.emit(id);
     }
   }
 
   goToDelete(id: string | number) {
-    if (this.entityView) {
-      this.router.navigate([`/home/${this.entityView}`, id]);
-    } else {
+    if (this.entityView && !this.parentName) {
+      this.router.navigate([`/home/${this.entityView}`, id, 'delete']);
+    } else if (this.entityView && this.parentName) {
+      this.router.navigate([`/home/${this.parentName}/${this.parentId}/${this.entityView}`, id, 'delete']);
+    }
+    else {
       this.onDelete.emit(id);
     }
   }
 
   goToView(id: string | number) {
-    if (this.entityView) {
+    if (this.entityView && !this.parentName) {
       this.router.navigate([`/home/${this.entityView}/${id}/view`]);
-    } else {
+    } else if (this.entityView && this.parentName) {
+      this.router.navigate([`/home/${this.parentName}/${this.parentId}/${this.entityView}/${id}/view`]);
+    }
+    else {
       this.onView.emit(id);
     }
   }

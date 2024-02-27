@@ -35,9 +35,41 @@
     "GroupId": 1,
     "FormAccessTypeId": 9
   },
-    {
+  {
     "GroupId": 1,
     "FormAccessTypeId": 10
+  },
+  {
+    "GroupId": 1,
+    "FormAccessTypeId": 11
+  },
+  {
+    "GroupId": 1,
+    "FormAccessTypeId": 12
+  },
+  {
+    "GroupId": 1,
+    "FormAccessTypeId": 13
+  },
+  {
+    "GroupId": 1,
+    "FormAccessTypeId": 14
+  },
+  {
+    "GroupId": 1,
+    "FormAccessTypeId": 15
+  },
+  {
+    "GroupId": 1,
+    "FormAccessTypeId": 16
+  },
+  {
+    "GroupId": 1,
+    "FormAccessTypeId": 17
+  },
+  {
+    "GroupId": 1,
+    "FormAccessTypeId": 18
   },
   {
     "GroupId": 2,
@@ -78,5 +110,37 @@
   {
     "GroupId": 2,
     "FormAccessTypeId": 10
+  },
+  {
+    "GroupId": 2,
+    "FormAccessTypeId": 11
+  },
+  {
+    "GroupId": 2,
+    "FormAccessTypeId": 12
+  },
+  {
+    "GroupId": 2,
+    "FormAccessTypeId": 13
+  },
+  {
+    "GroupId": 2,
+    "FormAccessTypeId": 14
+  },
+  {
+    "GroupId": 2,
+    "FormAccessTypeId": 15
+  },
+  {
+    "GroupId": 2,
+    "FormAccessTypeId": 16
+  },
+  {
+    "GroupId": 2,
+    "FormAccessTypeId": 17
+  },
+  {
+    "GroupId": 2,
+    "FormAccessTypeId": 18
   }
 ]

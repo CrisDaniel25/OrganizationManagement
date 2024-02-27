@@ -11,7 +11,7 @@ export interface Validator {
 }
 
 export interface Options {
-    id: string;
+    id: string | number | object | null | undefined | any;
     desc: string | number | object | null | undefined | any;
     isOn?: boolean;
 }

@@ -30,8 +30,17 @@ import { RoleComponent } from './features/administration/pages/role/role.compone
 import { AuditListComponent } from './features/administration/pages/audit-list/audit-list.component';
 import { AuditComponent } from './features/administration/pages/audit/audit.component';
 
+/* @Client Component & CRUD management */
+import { ClientListComponent } from './features/organization/pages/client-list/client-list.component';
+import { ClientComponent } from './features/organization/pages/client/client.component';
+
+/* @Employee Component & CRUD management */
+import { EmployeeComponent } from './features/organization/pages/employee/employee.component';
+
 /* @Page Not Found Component & route for a 404 page */
 import { PageNotFoundComponent } from './core/components/pages/page-not-found/page-not-found.component';
+import { ClientConfirmDeleteComponent } from './features/organization/pages/client-confirm-delete/client-confirm-delete.component';
+import { EmployeeConfirmDeleteComponent } from './features/organization/pages/employee-confirm-delete/employee-confirm-delete.component';
 
 const routes: Routes = [
   {
@@ -63,6 +72,62 @@ const routes: Routes = [
         canActivate: [AuthGuardService],
         data: {
           expectedRoles: MenuRoles.DASHBOARD,
+        },
+      },
+      {
+        path: 'client-list',
+        component: ClientListComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          expectedRoles: MenuRoles.CLIENTS,
+        },
+      },
+      {
+        path: 'client',
+        component: ClientComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          expectedRoles: MenuRoles.CLIENTS_CREATE,
+        },
+      },
+      {
+        path: 'client/:id',
+        component: ClientComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          expectedRoles: MenuRoles.CLIENTS_UPDATE,
+        },
+      },
+      {
+        path: 'client/:id/delete',
+        component: ClientConfirmDeleteComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          expectedRoles: MenuRoles.CLIENTS_DELETE,
+        },
+      },
+      {
+        path: 'client/:clientId/employee',
+        component: EmployeeComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          expectedRoles: MenuRoles.EMPLOYEES_CREATE,
+        },
+      },
+      {
+        path: 'client/:clientId/employee/:id',
+        component: EmployeeComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          expectedRoles: MenuRoles.EMPLOYEES_UPDATE,
+        },
+      },
+      {
+        path: 'client/:clientId/employee/:id/delete',
+        component: EmployeeConfirmDeleteComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          expectedRoles: MenuRoles.EMPLOYEES_DELETE,
         },
       },
       {

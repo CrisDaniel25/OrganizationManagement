@@ -13,7 +13,8 @@ using AdminProSolutions.Infrastructure.Repositories.Base;
 using AdminProSolutions.Infrastructure.Repositories.Messenger;
 using AdminProSolutions.Infrastructure.Repositories.Miscellaneous;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-
+using AdminProSolutions.Domain.Interfaces.Organization;
+using AdminProSolutions.Infrastructure.Repositories.Organization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -58,7 +59,6 @@ builder.Services.AddAuthentication(x =>
     };
 });
 
-
 /* New instance is provided to every controller and every service. */
 builder.Services.AddTransient<IActiveDirectory, ActiveDirectoryRepository>();
 builder.Services.AddTransient<IAuthetication, AuthenticationRepository>();
@@ -66,6 +66,8 @@ builder.Services.AddTransient<IAudit, AuditRepository>();
 builder.Services.AddTransient<IUsers, UserRepository>();
 builder.Services.AddTransient<IGroups, RoleRepository>();
 builder.Services.AddTransient<IEmail, EmailRepository>();
+builder.Services.AddTransient<IClients, ClientRepository>();
+builder.Services.AddTransient<IEmployees, EmployeeRepository>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
