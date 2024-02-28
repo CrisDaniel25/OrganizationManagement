@@ -1,6 +1,6 @@
 # Organization Management
 
-An application made it for that insuraces companies to be able to have more control on their accounts for those large clients as can be a companie that need insurances plans for their employee.
+An application made it possible for companies to be able to have more control over their accounts for those large clients as can a company that needs insurance plans for their employees insurance.
 
 ## Video presentation for the application
 
