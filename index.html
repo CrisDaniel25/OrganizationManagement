@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive organization administration demo with tenant, employee, RBAC and Microsoft Entra ID workflows.">
+  <title>OrgControl — Organization Management Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="demo-notice"><span>PORTFOLIO DEMO</span> Fictional data · browser-only changes · no production services</div>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="OrgControl dashboard"><span>OC</span><b>OrgControl</b></a>
+      <nav aria-label="Main navigation">
+        <button class="nav-item active" data-view="dashboard"><i>⌂</i><span>Overview</span></button>
+        <button class="nav-item" data-view="organizations"><i>▦</i><span>Organizations</span></button>
+        <button class="nav-item" data-view="employees"><i>◎</i><span>Employees</span></button>
+        <button class="nav-item" data-view="access"><i>◇</i><span>Access & SSO</span></button>
+        <button class="nav-item" data-view="audit"><i>≡</i><span>Audit trail</span></button>
+      </nav>
+      <div class="side-card"><small>DEMO WORKSPACE</small><strong>Northstar Group</strong><span>Enterprise plan</span></div>
+      <a class="portfolio-link" href="https://github.com/CrisDaniel25/OrganizationManagement/tree/portfolio-demo" target="_blank" rel="noopener noreferrer">View source <span>↗</span></a>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <button class="mobile-menu" aria-label="Open navigation">☰</button>
+        <div><span class="crumb">WORKSPACE / <b id="crumb">OVERVIEW</b></span></div>
+        <div class="top-actions"><button class="search-button" id="focusSearch">⌕ <span>Search</span><kbd>⌘ K</kbd></button><button class="icon-button" aria-label="Notifications">◌<i></i></button><div class="profile"><span>CF</span><div><b>Cristopher</b><small>Administrator</small></div></div></div>
+      </header>
+
+      <section class="view active" id="dashboard">
+        <div class="page-head"><div><span class="eyebrow">OPERATIONS SNAPSHOT</span><h1>Good morning, Cristopher.</h1><p>Here is what is happening across your organization today.</p></div><button class="primary" data-open-modal>+ Add organization</button></div>
+        <div class="metrics">
+          <article><span class="metric-icon purple">▦</span><small>ACTIVE ORGANIZATIONS</small><strong id="orgMetric">12</strong><em>↑ 2 this quarter</em></article>
+          <article><span class="metric-icon blue">◎</span><small>TOTAL EMPLOYEES</small><strong id="employeeMetric">248</strong><em>↑ 8.4% this month</em></article>
+          <article><span class="metric-icon green">◇</span><small>SSO ADOPTION</small><strong>83%</strong><em>10 of 12 tenants</em></article>
+          <article><span class="metric-icon orange">!</span><small>REQUIRES REVIEW</small><strong>03</strong><em class="warn">Access policies</em></article>
+        </div>
+        <div class="dashboard-grid">
+          <article class="panel activity-panel"><div class="panel-head"><div><span class="eyebrow">ACTIVITY</span><h2>Recent changes</h2></div><button class="text-button" data-view-link="audit">View audit trail</button></div><div id="activityList"></div></article>
+          <article class="panel health-panel"><div class="panel-head"><div><span class="eyebrow">TENANT HEALTH</span><h2>Portfolio status</h2></div><span class="status online">ALL SYSTEMS NORMAL</span></div><div class="health-chart"><div class="donut"><span><b>92</b><small>SCORE</small></span></div><div class="health-legend"><p><i class="green-dot"></i><span>Healthy</span><b>9</b></p><p><i class="orange-dot"></i><span>Needs attention</span><b>3</b></p><p><i class="gray-dot"></i><span>Suspended</span><b>0</b></p></div></div><div class="health-note">Last policy scan completed 4 minutes ago.</div></article>
+        </div>
+      </section>
+
+      <section class="view" id="organizations">
+        <div class="page-head"><div><span class="eyebrow">TENANT ADMINISTRATION</span><h1>Organizations</h1><p>Manage client workspaces, plan access and account status.</p></div><button class="primary" data-open-modal>+ Add organization</button></div>
+        <div class="toolbar"><label class="search-field">⌕ <input id="orgSearch" placeholder="Search organizations" autocomplete="off"></label><select id="statusFilter"><option value="all">All statuses</option><option value="Active">Active</option><option value="Review">Needs review</option></select></div>
+        <div class="panel table-panel"><div class="table" id="orgTable"></div></div>
+      </section>
+
+      <section class="view" id="employees">
+        <div class="page-head"><div><span class="eyebrow">PEOPLE DIRECTORY</span><h1>Employees</h1><p>Review members, roles and tenant assignments.</p></div><button class="primary" id="inviteButton">+ Invite employee</button></div>
+        <div class="toolbar"><label class="search-field">⌕ <input id="employeeSearch" placeholder="Search employees" autocomplete="off"></label><select id="roleFilter"><option value="all">All roles</option><option>Administrator</option><option>Manager</option><option>Member</option></select></div>
+        <div class="panel table-panel"><div class="table" id="employeeTable"></div></div>
+      </section>
+
+      <section class="view" id="access">
+        <div class="page-head"><div><span class="eyebrow">IDENTITY & ACCESS</span><h1>Access & SSO</h1><p>Configure federated identity and apply least-privilege access policies.</p></div><span class="security-score">SECURITY SCORE <b>92 / 100</b></span></div>
+        <div class="access-grid">
+          <article class="panel provider-card"><div class="provider-head"><span class="entra-mark">M</span><div><span class="eyebrow">IDENTITY PROVIDER</span><h2>Microsoft Entra ID</h2><p>OpenID Connect · Authorization Code + PKCE</p></div><span class="status online" id="entraStatus">CONNECTED</span></div><dl><div><dt>Tenant</dt><dd>northstar-demo.onmicrosoft.com</dd></div><div><dt>Claims mapping</dt><dd>oid · email · name · roles</dd></div><div><dt>Last key refresh</dt><dd>12 minutes ago</dd></div><div><dt>Provisioning</dt><dd>Just-in-time enabled</dd></div></dl><div class="provider-actions"><button class="secondary" id="testSso">Run connection test</button><button class="text-button" id="rotateKeys">Refresh signing keys</button></div><div class="test-result" id="ssoResult" aria-live="polite"></div></article>
+          <article class="panel policy-card"><div class="panel-head"><div><span class="eyebrow">EFFECTIVE POLICY</span><h2>Role permissions</h2></div><select id="policyRole"><option>Administrator</option><option>Manager</option><option>Member</option></select></div><div id="permissionMatrix"></div></article>
+        </div>
+        <article class="panel flow-panel"><div><span class="eyebrow">SECURE SIGN-IN FLOW</span><h2>Federated session handoff</h2><p>No real credentials or tokens are used in this demo.</p></div><div class="flow"><span>APP LOGIN</span><i></i><span>ENTRA AUTHORIZE</span><i></i><span>STATE + NONCE</span><i></i><span>JWT VALIDATION</span><i></i><span>LOCAL SESSION</span></div></article>
+      </section>
+
+      <section class="view" id="audit">
+        <div class="page-head"><div><span class="eyebrow">COMPLIANCE</span><h1>Audit trail</h1><p>Inspect traceable administrative and identity events.</p></div><button class="secondary" id="exportAudit">Export sample CSV</button></div>
+        <div class="panel table-panel"><div class="table" id="auditTable"></div></div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="orgModal">
+    <form method="dialog" id="orgForm"><div class="modal-head"><div><span class="eyebrow">NEW TENANT</span><h2>Add organization</h2></div><button class="close-button" value="cancel" aria-label="Close">×</button></div><p>Create a fictional workspace for this browser session.</p><label>Organization name<input id="newOrgName" required placeholder="Example Company"></label><div class="form-row"><label>Plan<select id="newOrgPlan"><option>Enterprise</option><option>Growth</option><option>Starter</option></select></label><label>Initial seats<input id="newOrgSeats" type="number" min="1" max="999" value="25" required></label></div><menu><button class="secondary" value="cancel">Cancel</button><button class="primary" value="default" id="saveOrg">Create organization</button></menu></form>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
